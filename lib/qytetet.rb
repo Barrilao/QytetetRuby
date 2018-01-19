@@ -229,6 +229,9 @@ module ModeloQytetet
       @mazo<< Sorpresa.new("Ya estamos en el evento de La Semana de los Niños, sabemos que eres una persona solidaria y donas 150$ a cada uno de los huerfanos(jugadores)",
         150, TipoSorpresa::PORJUGADOR)
       @mazo<< Sorpresa.new("Tus campeones han vuelto de sus misiones, recibes 200$ de cada uno de ellos(jugadores)", 200, TipoSorpresa::PORJUGADOR)
+      @mazo<< Sorpresa.new("El rey Anduin Wrynn ha escuchado sobre tus hazañas, por lo que te convertirás en especulador", 5000, TipoSorpresa::CONVERTIRME)
+      @mazo<< Sorpresa.new("La Jefa de Guerra Sylvanas Brisaveloz te recompensa con el título de Especulador por tus logros en la
+          batalla del Valle de Alterac", 3000, TipoSorpresa::CONVERTIRME)
       
       @mazo.shuffle!
       

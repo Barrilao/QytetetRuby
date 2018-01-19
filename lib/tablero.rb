@@ -33,33 +33,32 @@ module ModeloQytetet
     def inicializar    #Titulos de propiedad y PrecioCasilla no inicializados
       @casillas = Array.new
       
-      @casillas << Casilla.new(0, 0, 0, TipoCasilla::SALIDA, nil)
-      @casillas << Casilla.new(1, 300, 0, TipoCasilla::CALLE, TituloPropiedad.new("Gnomeregan",0,0,0,0))
-      @casillas << Casilla.new(2, 300, 0, TipoCasilla::CALLE, TituloPropiedad.new("Isla de Eco",0,0,0,0))
-      @casillas << Casilla.new(3, 0, 0, TipoCasilla::SORPRESA, nil)
-      @casillas << Casilla.new(4, 500, 0, TipoCasilla::CALLE, TituloPropiedad.new("El Exodar",0,0,0,0))
-      @casillas << Casilla.new(5, 0, 0, TipoCasilla::CARCEL, nil)
+      @casillas << Casilla.new(0, 0, TipoCasilla::SALIDA)
+      @casillas << Calle.new(1, 300, TituloPropiedad.new("Gnomeregan",0,0,0,0))
+      @casillas << Calle.new(2, 300, TituloPropiedad.new("Isla de Eco",0,0,0,0))
+      @casillas << Casilla.new(3, 0, TipoCasilla::SORPRESA)
+      @casillas << Calle.new(4, 500, TituloPropiedad.new("El Exodar",0,0,0,0))
+      @casillas << Casilla.new(5, 0, TipoCasilla::CARCEL)
       @carcel = @casillas.at(5)
-      @casillas << Casilla.new(6, 700, 0, TipoCasilla::CALLE, TituloPropiedad.new("Lunargenta",0,0,0,0))
-      @casillas << Casilla.new(7, 700, 0, TipoCasilla::CALLE, TituloPropiedad.new("Darnassus",0,0,0,0))
-      @casillas << Casilla.new(8, 0, 0, TipoCasilla::SORPRESA, nil)
-      @casillas << Casilla.new(9, 900, 0, TipoCasilla::CALLE, TituloPropiedad.new("Cima del Trueno",0,0,0,0))
-      @casillas << Casilla.new(10, 0, 0, TipoCasilla::PARKING, nil)
-      @casillas << Casilla.new(11, 1100, 0, TipoCasilla::CALLE, TituloPropiedad.new("Forjaz",0,0,0,0))
-      @casillas << Casilla.new(12, 1100, 0, TipoCasilla::CALLE, TituloPropiedad.new("Entrañas",0,0,0,0))
-      @casillas << Casilla.new(13, 0, 0, TipoCasilla::IMPUESTO, nil)
-      @casillas << Casilla.new(14, 1300, 0, TipoCasilla::CALLE, TituloPropiedad.new("Shattrath",0,0,0,0))
-      @casillas << Casilla.new(15, 0, 0, TipoCasilla::JUEZ, nil)
-      @casillas << Casilla.new(16, 1500, 0, TipoCasilla::CALLE, TituloPropiedad.new("Ventormenta",0,0,0,0))
-      @casillas << Casilla.new(17, 1500, 0, TipoCasilla::CALLE, TituloPropiedad.new("Ogrimmar",0,0,0,0))
-      @casillas << Casilla.new(18, 0, 0, TipoCasilla::SORPRESA, nil)
-      @casillas << Casilla.new(19, 1750, 0, TipoCasilla::CALLE, TituloPropiedad.new("Dalaran",0,0,0,0))
+      @casillas << Calle.new(6, 700, TituloPropiedad.new("Lunargenta",0,0,0,0))
+      @casillas << Calle.new(7, 700, TituloPropiedad.new("Darnassus",0,0,0,0))
+      @casillas << Casilla.new(8, 0, TipoCasilla::SORPRESA)
+      @casillas << Calle.new(9, 900, TituloPropiedad.new("Cima del Trueno",0,0,0,0))
+      @casillas << Casilla.new(10, 0, TipoCasilla::PARKING)
+      @casillas << Calle.new(11, 1100, TituloPropiedad.new("Forjaz",0,0,0,0))
+      @casillas << Calle.new(12, 1100, TituloPropiedad.new("Entrañas",0,0,0,0))
+      @casillas << Casilla.new(13, 0, TipoCasilla::IMPUESTO)
+      @casillas << Calle.new(14, 1300, TituloPropiedad.new("Shattrath",0,0,0,0))
+      @casillas << Casilla.new(15, 0, TipoCasilla::JUEZ)
+      @casillas << Calle.new(16, 1500, TituloPropiedad.new("Ventormenta",0,0,0,0))
+      @casillas << Calle.new(17, 1500, TituloPropiedad.new("Ogrimmar",0,0,0,0))
+      @casillas << Casilla.new(18, 0, TipoCasilla::SORPRESA)
+      @casillas << Calle.new(19, 1750, TituloPropiedad.new("Dalaran",0,0,0,0))
       
     end
     
     def to_s
       return "Casillas = " << @casillas.to_s + "\t Cárcel = #{@carcel} \n"
     end
-    
   end
 end

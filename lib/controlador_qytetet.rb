@@ -11,6 +11,8 @@ require_relative "metodo_salir_carcel"
 require_relative "jugador"
 require_relative "dado"
 require_relative "vista_textual_qytetet"
+require_relative "calle"
+
 
 module InterfazTextualQytetet
   class ControladorQytetet

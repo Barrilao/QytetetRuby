@@ -4,7 +4,7 @@ module ModeloQytetet
   class Jugador
     attr_accessor :casilla_actual,:encarcelado, :saldo, :propiedades
     attr_writer :carta
-    attr_reader :nombre
+    attr_reader :nombre, :factorEspeculador
     
     
     def initialize(n)
@@ -14,6 +14,7 @@ module ModeloQytetet
       @casilla_actual = nil
       @propiedades = Array.new
       @carta = nil
+      @factorEspeculador = 1
     end
     
     def tengo_propiedades 
@@ -216,15 +217,33 @@ module ModeloQytetet
       end
       return ret 
     end
-        def to_s
-          "\nNombre: #{@nombre}" \
-          "\nSaldo: #{@saldo}" \
-          "\nCarta Libertad: #{!@carta.nil?}" \
-          "\nEncarcelado: #{@encarcelado}" \
-          "\nCasilla Actual: #{@casilla_actual.numeroCasilla}" \
-          "\nPropiedades:" \
-          "#{@propiedades}"
-      end
     
+    def pagar_impuestos(cantidad)
+      modificar_saldo(cantidad)
+    end
+    
+    def convertirme(fianza)
+      nuevoEspeculador = Especulador.new(self, fianza)
+      
+      nuevoEspeculador.propiedades.each do |propiet|
+        propiet.propietario = nuevoEspeculador
+      end
+      
+      return nuevoEspeculador
+    end
+    
+    
+    def to_s
+      "\nNombre: #{@nombre}" \
+      "\nSaldo: #{@saldo}" \
+      "\nCarta Libertad: #{!@carta.nil?}" \
+      "\nEncarcelado: #{@encarcelado}" \
+      "\nCasilla Actual: #{@casilla_actual.numeroCasilla}" \
+      "\nPropiedades:" \
+      "#{@propiedades}" \
+      "\nFactor Especulador: #{@factorEspeculador}"
+    end
+    
+    protected :pagar_impuestos
   end
 end
